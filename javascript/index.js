@@ -81,16 +81,62 @@ obtainInstruction('steak', 0)
   })
   .then( (step7) => {
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`
+    document.querySelector("#steak").innerHTML += `<li>Stake is ready!</li>`
     document.querySelector("#steakImg").removeAttribute("hidden"); 
   })
   .catch((err) => console.log(err));
 
-  // ... Your code here
-
-
-
 // Iteration 3 using async/await
-// ...
+
+async function makeBroccoli() {
+
+   try {
+
+    let print = await obtainInstruction('broccoli', 0)
+    document.querySelector("#broccoli").innerHTML += `<li>${print}</li>`
+    print = await obtainInstruction('broccoli', 1)
+    document.querySelector("#broccoli").innerHTML += `<li>${print}</li>`
+    print = await obtainInstruction('broccoli', 2)
+    document.querySelector("#broccoli").innerHTML += `<li>${print}</li>`
+    print = await obtainInstruction('broccoli', 3)
+    document.querySelector("#broccoli").innerHTML += `<li>${print}</li>`
+    print = await obtainInstruction('broccoli', 4)
+    document.querySelector("#broccoli").innerHTML += `<li>${print}</li>`
+    print = await obtainInstruction('broccoli', 5)
+    document.querySelector("#broccoli").innerHTML += `<li>${print}</li>`
+    print = await obtainInstruction('broccoli', 6)
+    document.querySelector("#broccoli").innerHTML += `<li>${print}</li>`
+    document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
+ }
+
+ catch(err) {
+  console.log(err)
+
+ }
+
+}
+
+makeBroccoli()
 
 // Bonus 2 - Promise all
-// ...
+ let p1 = obtainInstruction("brusselsSprouts", 0)
+ let p2 = obtainInstruction("brusselsSprouts", 1)
+ let p3 = obtainInstruction("brusselsSprouts", 2)
+ let p4 = obtainInstruction("brusselsSprouts", 3)
+ let p5 = obtainInstruction("brusselsSprouts", 4)
+ let p6 = obtainInstruction("brusselsSprouts", 5)
+ let p7 = obtainInstruction("brusselsSprouts", 6)
+ let p8 = obtainInstruction("brusselsSprouts", 7)
+ let p9 = obtainInstruction("brusselsSprouts", 8)
+
+ Promise.all( [p1, p2, p3, p4, p5, p6, p7, p8, p9])
+ .then((results) => {
+   results.forEach((element)=>{
+     document.querySelector("#brusselsSprouts").innerHTML += `<li>${element}</li>`
+    }),document.querySelector("#brusselsSproutsImg").removeAttribute("hidden")})
+
+
+
+ 
+
