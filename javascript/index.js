@@ -119,7 +119,8 @@ async function makeBroccoli() {
 
 makeBroccoli()
 
-// Bonus 2 - Promise all
+brusselsSprouts.push("Brussels sprouts are ready!")
+
  let p1 = obtainInstruction("brusselsSprouts", 0)
  let p2 = obtainInstruction("brusselsSprouts", 1)
  let p3 = obtainInstruction("brusselsSprouts", 2)
